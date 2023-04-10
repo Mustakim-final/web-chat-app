@@ -1,0 +1,258 @@
+
+img{
+    object-fit: cover;
+}
+
+.msg_body_me{
+    background-color: rgb(240, 236, 236);
+    margin-left: auto;
+    border-bottom-right-radius: 0 !important;
+
+}
+
+.msg_body_receiver{
+    background-color: #183570;
+    color: white;
+
+    border-bottom-left-radius: 0 !important;
+}
+
+/* chat container */
+/*--------------------*/
+.chat_container {
+    position: fixed;
+    width: 95%;
+    left: 2.5%;
+    height: 85%;
+    border: 1px solid gray;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 11px;
+    padding: 5px 6px;
+}
+
+ /* chat list */
+ /*--------------------*/
+.chat_list_container {
+    border-right: 1px solid;
+    width: 25%;
+    height: 100%;
+    border-radius: inherit;
+
+
+}
+
+.chatlist_header{
+    border-bottom: 1px solid gray;
+    height: 60px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.title{
+    font-size: 19px;
+    display: flex;
+    padding: 5px 6px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.img_container{
+
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    margin-left: auto;
+    margin-right: 2px;
+}
+
+.chatlist_body{
+
+}
+
+.chatlist_item{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 2px 8px;
+}
+
+.chatlist_img_container{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: auto;
+    margin-left: auto;
+}
+
+.chatlist_img_container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+}
+
+.chatlist_info{
+    width: 80%;
+    display: block;
+    padding: 2px 5px;
+    /* flex-wrap: nowrap; */
+}
+
+.chatlist_info .top_row{
+    margin: 3px 0px;
+    display: flex;
+    width: 100%;
+
+}
+
+.chatlist_info .top_row .list_username{
+    font-size: 16px;
+    width: 80%;
+
+}
+
+.chatlist_info .top_row .date{
+    margin-left: auto;
+    font-size: 13px;
+    margin-right: 3px;
+}
+
+.chatlist_info .bottom_row{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.chatlist_info .bottom_row .message_body{
+    width: 80%;
+    font-weight: lighter;
+    font-family: "Roboto";
+}
+
+.chatlist_info .bottom_row .unread_count{
+    margin-left: auto;
+    font-size: 13px;
+    background-color: gainsboro;
+    padding: 3px 8px;
+    border-radius: 50%;
+    color: rgb(9, 129, 233);
+    font-weight: lighter;
+}
+
+
+/* chat box */
+/*--------------------*/
+.chat_box_container {
+    width: 75%;
+    height: 100%;
+    /* border: 1px solid; */
+    position: relative;
+
+}
+
+
+
+.chatbox_header {
+    border-bottom: 1px solid gray;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.chatbox_header .return{
+    margin: auto 0;
+    font-size: 21px;
+    padding: 7px 11px;
+    cursor: pointer;
+}
+
+.chatbox_header .img_container{
+    height: 39px;
+    width: 39px;
+    margin: auto;
+    margin-left: 4px;
+}
+
+.chatbox_header .img_container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.chatbox_header .name{
+    margin: auto 5px;
+    cursor: pointer;
+}
+
+.chatbox_header .info{
+
+
+    margin: auto 0 auto auto;
+    color: #0182f4;
+    font-size: 19px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.chatbox_header .info .info_item{
+    margin: 1px 11px;
+    padding: 3px 5px;
+    padding: 4px 7px;
+    cursor: pointer;
+}
+
+.chatbox_body {
+    width: 100%;
+
+    position: absolute;
+    top: 60px;
+    overflow-y: auto;
+    padding: 11px 11px;
+}
+
+.chatbox_body .msg_body{
+    display: block;
+    max-width: 80%;
+    margin-top: 11px;
+    /* background-color: rgb(240, 236, 236); */
+
+    border-radius: 9px;
+    padding: 4px 7px;
+}
+
+.chatbox_body .msg_body .msg_body_footer{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: right;
+
+}
+
+.chatbox_body .msg_body .msg_body_footer .date{
+    font-size: 13px;
+    padding-right: 7px;
+}
+
+.chatbox_body .msg_body .msg_body_footer .read{
+
+    color: rgb(172, 63, 63);
+}
+
+.chatbox_body .msg_body .msg_body_footer .read i{
+    font-size: 21px;
+    margin: 2px;
+}
+
+.chatbox_footer {
+    width: 100%;
+    position: absolute;
+    height: 60px;
+    border-top: 1px solid green;
+    bottom: 0px;
+}
