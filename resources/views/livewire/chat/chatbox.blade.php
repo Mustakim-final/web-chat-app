@@ -62,8 +62,39 @@
             </div>
         </div>
 
+
+        <div class="msg_body msg_body_me">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore non dolor aspernatur repellat beatae voluptatum. Error harum provident, laborum corporis eligendi dicta a maiores fugit obcaecati. Doloribus, animi quibusdam.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquid culpa quam qui placeat dolores id vero at facere quo! Nostrum dolorem quisquam, reprehenderit natus quia sit at minus voluptas.
+
+            <div class="msg_body_footer">
+                <div class="date">
+                    5 hours ago
+                </div>
+
+                <div class="read">
+                    <i class="bi bi-check"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="msg_body msg_body_me">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore non dolor aspernatur repellat beatae voluptatum. Error harum provident, laborum corporis eligendi dicta a maiores fugit obcaecati. Doloribus, animi quibusdam.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquid culpa quam qui placeat dolores id vero at facere quo! Nostrum dolorem quisquam, reprehenderit natus quia sit at minus voluptas.
+
+            <div class="msg_body_footer">
+                <div class="date">
+                    5 hours ago
+                </div>
+
+                <div class="read">
+                    <i class="bi bi-check"></i>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    
+
 
 </div>
