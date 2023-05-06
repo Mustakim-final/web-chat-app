@@ -22,15 +22,15 @@ class CreateChat extends Component
         if(count($checkConversation)==0){
 
             //,'last_time_message'=>0
-            $createdConvsersation=Conversation::create(['recever_id'=>$receivedId,'sender_id'=>auth()->user()->id]);
+            $createdConvsersation=Conversation::create(['recever_id'=>$receivedId,'sender_id'=>auth()->user()->id,'last_time_message'=>0]);
 
             $createdMessage=Message::create(['conversations_id'=>$createdConvsersation->id,'sender_id'=>auth()->user()->id,'recever_id'=>$receivedId,'body'=>$this->message]);
 
-            $createdConvsersation->last_time_message=$createdMessage->create_at;
+            $createdConvsersation->last_time_message=$createdMessage->created_at;
             $createdConvsersation->save();
 
             //dd('save');
-            dd($createdMessage);
+            //dd($createdMessage);
 
 
             //dd('no conversation');

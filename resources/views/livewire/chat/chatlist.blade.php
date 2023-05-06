@@ -6,37 +6,47 @@
             Chat
         </div>
         <div class="img_container">
-            <img style="width:100%; height:100%; border-radius:50%; border:1px solid gray" src="https://picsum.photos/id/237/200/300" alt="">
+            <img style="width:100%; height:100%; border-radius:50%; border:1px solid gray"
+                src="https://picsum.photos/id/237/200/300" alt="">
         </div>
     </div>
 
-    <div class="chatlist_body">
+    @if (count($conversations) > 0)
 
-        <div class="chatlist_item">
-            <div class="chatlist_img_container">
-                <img src="https://picsum.photos/id/161/200/300" alt="">
-            </div>
+        @foreach ($conversations as $row)
+            <div class="chatlist_body" wire:click="$emit('chatUserSelected',{{ $row }},{{ $this->getChatUserInstance($row,$name='id') }})">
 
-            <div class="chatlist_info">
-                <div class="top_row">
-                    <div class="list_username">
-                        Mustakim
+                <div class="chatlist_item">
+                    <div class="chatlist_img_container">
+                        <img src="https://picsum.photos/id/{{ $this->getChatUserInstance($row,$name='id') }}/200/300" alt="">
                     </div>
 
-                    <span class="date">2d</span>
+                    <div class="chatlist_info">
+                        <div class="top_row">
+                            <div class="list_username">
+                                {{ $this->getChatUserInstance($row,$name='name') }}
+                            </div>
+
+                            <span class="date">2d</span>
+                        </div>
+
+                        <div class="bottom_row">
+                            <div class="message_body text-truncate">
+                                {{-- {{ $row->messages->last()->body }} --}}
+
+                            </div>
+
+                            <div class="unread_count">
+                                56
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="bottom_row">
-                    <div class="message_body text-truncate">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate corporis non, nesciunt officiis illum perferendis odit velit magnam vitae accusamus corrupti alias, a eligendi unde doloremque reiciendis itaque assumenda accusantium!
-
-                    </div>
-
-                    <div class="unread_count">
-                        56
-                    </div>
-                </div>
             </div>
-        </div>
-    </div>
+        @endforeach
+    @else
+        no conversation
+    @endif
+
+
 </div>

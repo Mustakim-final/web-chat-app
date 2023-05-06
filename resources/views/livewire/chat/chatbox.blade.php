@@ -1,5 +1,8 @@
 <div>
     {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
+
+    @if ($selectedConversation)
+
     <div class="chatbox_header">
 
 
@@ -8,11 +11,11 @@
         </div>
 
         <div class="img_container">
-            <img src="https://picsum.photos/id/161/200/300" alt="">
+            <img src="https://picsum.photos/id/{{ $reciverInstance->id }}/200/300" alt="">
         </div>
 
         <div class="name">
-            Mustakim
+            {{ $reciverInstance->name }}
         </div>
 
         <div class="info">
@@ -32,13 +35,12 @@
 
     <div class="chatbox_body">
 
+        @foreach ($messages as $row)
         <div class="msg_body msg_body_receiver">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore non dolor aspernatur repellat beatae voluptatum. Error harum provident, laborum corporis eligendi dicta a maiores fugit obcaecati. Doloribus, animi quibusdam.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquid culpa quam qui placeat dolores id vero at facere quo! Nostrum dolorem quisquam, reprehenderit natus quia sit at minus voluptas.
-
+            {{ $row->body }}
             <div class="msg_body_footer">
                 <div class="date">
-                    5 hours ago
+                    {{ $row->created_at->format('m: i a') }}
                 </div>
 
                 <div class="read">
@@ -46,55 +48,44 @@
                 </div>
             </div>
         </div>
-
-        <div class="msg_body msg_body_me">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore non dolor aspernatur repellat beatae voluptatum. Error harum provident, laborum corporis eligendi dicta a maiores fugit obcaecati. Doloribus, animi quibusdam.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquid culpa quam qui placeat dolores id vero at facere quo! Nostrum dolorem quisquam, reprehenderit natus quia sit at minus voluptas.
-
-            <div class="msg_body_footer">
-                <div class="date">
-                    5 hours ago
-                </div>
-
-                <div class="read">
-                    <i class="bi bi-check"></i>
-                </div>
-            </div>
-        </div>
+        @endforeach
 
 
-        <div class="msg_body msg_body_me">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore non dolor aspernatur repellat beatae voluptatum. Error harum provident, laborum corporis eligendi dicta a maiores fugit obcaecati. Doloribus, animi quibusdam.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquid culpa quam qui placeat dolores id vero at facere quo! Nostrum dolorem quisquam, reprehenderit natus quia sit at minus voluptas.
 
-            <div class="msg_body_footer">
-                <div class="date">
-                    5 hours ago
-                </div>
 
-                <div class="read">
-                    <i class="bi bi-check"></i>
-                </div>
-            </div>
-        </div>
 
-        <div class="msg_body msg_body_me">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore non dolor aspernatur repellat beatae voluptatum. Error harum provident, laborum corporis eligendi dicta a maiores fugit obcaecati. Doloribus, animi quibusdam.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquid culpa quam qui placeat dolores id vero at facere quo! Nostrum dolorem quisquam, reprehenderit natus quia sit at minus voluptas.
 
-            <div class="msg_body_footer">
-                <div class="date">
-                    5 hours ago
-                </div>
 
-                <div class="read">
-                    <i class="bi bi-check"></i>
-                </div>
-            </div>
-        </div>
+
+
 
     </div>
+
+    @else
+    <div class="fs-4 text-center text-primary mt-5">
+        no conversation selected
+    </div>
+    @endif
+
+
+
+
 
 
 
 </div>
+
+{{-- <div class="msg_body msg_body_me">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore non dolor aspernatur repellat beatae voluptatum. Error harum provident, laborum corporis eligendi dicta a maiores fugit obcaecati. Doloribus, animi quibusdam.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquid culpa quam qui placeat dolores id vero at facere quo! Nostrum dolorem quisquam, reprehenderit natus quia sit at minus voluptas.
+
+    <div class="msg_body_footer">
+        <div class="date">
+            5 hours ago
+        </div>
+
+        <div class="read">
+            <i class="bi bi-check"></i>
+        </div>
+    </div>
+</div> --}}
