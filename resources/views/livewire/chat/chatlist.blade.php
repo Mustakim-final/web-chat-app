@@ -7,7 +7,9 @@
         </div>
         <div class="img_container">
             <img style="width:100%; height:100%; border-radius:50%; border:1px solid gray"
-                src="https://picsum.photos/id/237/200/300" alt="">
+                src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name={{ auth()->user()->name }}" alt="">
+
+
         </div>
     </div>
 
@@ -18,7 +20,7 @@
 
                 <div class="chatlist_item">
                     <div class="chatlist_img_container">
-                        <img src="https://picsum.photos/id/{{ $this->getChatUserInstance($row,$name='id') }}/200/300" alt="">
+                        <img src="https://ui-avatars.com/api/?name={{ $this->getChatUserInstance($row,$name='name') }}" alt="">
                     </div>
 
                     <div class="chatlist_info">

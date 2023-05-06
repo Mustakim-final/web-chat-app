@@ -11,7 +11,7 @@
         </div>
 
         <div class="img_container">
-            <img src="https://picsum.photos/id/{{ $reciverInstance->id }}/200/300" alt="">
+            <img src="https://ui-avatars.com/api/?name={{ $reciverInstance->name }}" alt="">
         </div>
 
         <div class="name">
