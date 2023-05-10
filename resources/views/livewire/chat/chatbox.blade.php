@@ -36,7 +36,7 @@
     <div class="chatbox_body">
 
         @foreach ($messages as $row)
-        <div class="msg_body msg_body_receiver">
+        <div class="msg_body {{ auth()->id()==$row->sender_id? 'msg_body_me':'msg_body_receiver' }}">
             {{ $row->body }}
             <div class="msg_body_footer">
                 <div class="date">
