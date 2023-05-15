@@ -59,7 +59,30 @@
 
 
 
+
     </div>
+
+    <script>
+        $('.chatbox_body').on('scroll',function(){
+            var top=$('.chatbox_body').scrollTop();
+
+            if(top==0){
+                window.livewire.emit('loadmore');
+            }
+        })
+    </script>
+
+    <script>
+        window.addEventListener('updateHeight',event=>{
+            let old=event.detail.height;
+            let newHeight=$('.chatbox_body')[0].scrollHeight;
+
+            let height=$('.chatbox_body').scrollTop(newHeight-old);
+            window.livewire.emit('updateHeight',{
+                height:height,
+            })
+        });
+    </script>
 
     @else
     <div class="fs-4 text-center text-primary mt-5">
@@ -72,6 +95,12 @@
 
 
 
+    <script>
+        window.addEventListener('rowChatToBottom',event=>{
+            $('.chatbox_body').scrollTop($('.chatbox_body')[0].scrollHeight);
+        });
+
+    </script>
 
 </div>
 

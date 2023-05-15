@@ -19,7 +19,16 @@
             if(window.innerWidth<768){
                 $('.chat_list_container').hide();
                 $('.chat_list_container').show();
+
+
             }
+            $('.chatbox_body').scrollTop($('.chatbox_body')[0].scrollHeight);
+
+            let height=$('.chatbox_body')[0].scrollHeight;
+            //alert(height);
+            window.livewire.emit('updateHeight',{
+                height:height,
+            });
         });
 
         $(window).resize(function(){

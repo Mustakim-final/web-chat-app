@@ -16,7 +16,7 @@
     @if (count($conversations) > 0)
 
         @foreach ($conversations as $row)
-            <div class="chatlist_body" wire:click="$emit('chatUserSelected',{{ $row }},{{ $this->getChatUserInstance($row,$name='id') }})">
+            <div class="chatlist_body" wire:key='{{ $row->id }}' wire:click="$emit('chatUserSelected',{{ $row }},{{ $this->getChatUserInstance($row,$name='id') }})">
 
                 <div class="chatlist_item">
                     <div class="chatlist_img_container">
@@ -29,7 +29,7 @@
                                 {{ $this->getChatUserInstance($row,$name='name') }}
                             </div>
 
-                            <span class="date">2d</span>
+                            {{-- <span class="date">{{ $row->messages->last()?->created_at->shortAbsolutedDiffForHuman }}</span> --}}
                         </div>
 
                         <div class="bottom_row">
